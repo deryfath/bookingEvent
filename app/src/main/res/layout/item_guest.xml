@@ -32,6 +32,15 @@
             android:textSize="15dp"
             android:textAllCaps="true"/>
 
+        <TextView
+            android:id="@+id/prime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:gravity="center"
+            android:textSize="10dp"
+            android:textAllCaps="true"/>
+
     </LinearLayout>
 
 

@@ -24,6 +24,9 @@ class RecyclerGuestAdapter (private val activity: GuestActivity, private val ite
     override fun onBindViewHolder(holder: RecyclerGuestAdapter.ViewHolder?, position: Int) {
         val view=holder?.itemView
         val data=items[position]
+        val arrDate = data.birthdate.split("-")
+        var date = arrDate[2].toInt()
+        var stringToast = ""
 
         view?.let {
 
@@ -31,14 +34,16 @@ class RecyclerGuestAdapter (private val activity: GuestActivity, private val ite
             (it.findViewById(R.id.nameGuest) as TextView).text=data.name
             (it.findViewById(R.id.birthday) as TextView).text=data.birthdate
 
+            if (activity.isPrime(arrDate[1].toInt())){
+                (it.findViewById(R.id.prime) as TextView).text="PRIME"
+            }else{
+                (it.findViewById(R.id.prime) as TextView).text="NOT PRIME"
+
+            }
         }
 
         view?.setOnClickListener {
             val dataIntent = Intent()
-
-            val arrDate = data.birthdate.split("-")
-            var date = arrDate[2].toInt()
-            var stringToast = ""
 
             if (date%2==0 && date%3==0){
                 stringToast = "IOS"

@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="grayEditText">#eb7e7b7b</color>
     <color name="grey_10">#e6e6e6</color>
+    <color name="selectedMap">#2196F3</color>
+    <color name="unselectedMap">#7E7E94</color>
 </resources>

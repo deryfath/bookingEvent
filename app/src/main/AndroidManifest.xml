@@ -3,6 +3,8 @@
     package="com.example.dai_01.suitmediatest">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".App"
@@ -22,6 +24,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.main.MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAlzp7vU8byZkuEB6i15Rp-TO0ZPO16mJM" />
+
     </application>
 
 </manifest>

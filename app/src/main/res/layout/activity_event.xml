@@ -20,11 +20,18 @@
             android:layout_height="70dp"
             android:background="@color/colorPrimary"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btnBackEvent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/btn_backarticle_normal"
+                android:layout_marginStart="15dp"/>
+
 
             <TextView
                 android:layout_weight="1"
-                android:paddingLeft="20dp"
                 android:gravity="center"
                 android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
@@ -34,22 +41,62 @@
                 android:textSize="18dp"/>
 
 
+            <ImageView
+                android:id="@+id/btnFlipper"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/btn_article_normal"
+                android:layout_marginEnd="15dp"/>
+
         </LinearLayout>
 
 
     </RelativeLayout>
 
-<RelativeLayout
 
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.example.dai_01.suitmediatest.activity.event.EventActivity">
-
-    <android.support.v7.widget.RecyclerView
+    <ViewAnimator
         android:layout_width="match_parent"
-        android:id="@+id/rv_event"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/flipper">
 
-</RelativeLayout>
+        <RelativeLayout
+
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.example.dai_01.suitmediatest.activity.event.EventActivity">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/rv_event"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:id="@+id/containerMap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <fragment
+                android:layout_below="@+id/viewPagerEvent"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <android.support.v4.view.ViewPager
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/viewPagerEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"/>
+
+        </RelativeLayout>
+
+    </ViewAnimator>
+
+
 </LinearLayout>

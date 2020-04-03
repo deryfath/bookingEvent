@@ -43,11 +43,17 @@
     android:layout_height="wrap_content"
     tools:context="com.example.dai_01.suitmediatest.activity.guest.GuestActivity">
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/rv_guest"
         android:layout_height="wrap_content"/>
 
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
 </LinearLayout>

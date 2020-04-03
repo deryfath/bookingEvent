@@ -7,5 +7,7 @@ data class EventResponse(
 data class DataEvent(
     val date: String,
     val image: String,
-    val name: String
+    val name: String,
+    val location: String
+
 )

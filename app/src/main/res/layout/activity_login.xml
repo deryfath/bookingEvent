@@ -8,20 +8,52 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
+    android:background="@drawable/bg_validation"
     tools:context="com.example.dai_01.suitmediatest.activity.login.LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang!"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Sertakan gambar profil anda untuk melengkapi profil"
+        android:textSize="20dp"
+        android:layout_marginBottom="30dp"/>
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/btn_add_photo"/>
 
 
     <EditText
+        android:textColor="@android:color/white"
         android:id="@+id/inputName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Masukkan Nama"/>
+        android:hint="Masukkan Nama"
+        android:imeOptions="actionNext"
+        android:backgroundTint ="@android:color/white"
+        android:textColorHint="@android:color/white"/>
 
     <Button
         android:id="@+id/btnNext"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Next"/>
+        android:layout_height="50dp"
+        android:text="Next"
+        android:textColor="@android:color/white"
+        android:background="@drawable/btn_signup_normal"/>
 
 </LinearLayout>
