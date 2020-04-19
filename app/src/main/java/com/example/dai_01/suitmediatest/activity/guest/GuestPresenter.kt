@@ -20,6 +20,7 @@ val retrofit: Retrofit
 
     private var view : GuestView? = null
     var guestListDisposables = Disposables.empty()
+    var guestListMoreDisposables = Disposables.empty()
 
     override fun onAttach(view: GuestView) {
         this.view = view
@@ -29,10 +30,10 @@ val retrofit: Retrofit
         view = null
     }
 
-    fun loadGuestList(){
+    fun loadGuestList(page:Int){
 
         guestListDisposables.dispose()
-        guestListDisposables = api.getGuest()
+        guestListDisposables = api.getGuest(page)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -48,6 +49,30 @@ val retrofit: Retrofit
                         view?.onLoadFailedGuest("Error: ${body}")
                     } else {
                         view?.onLoadFailedGuest(err.localizedMessage)
+                    }
+                })
+    }
+
+
+    fun loadMoreGuestList(page:Int){
+
+        guestListMoreDisposables.dispose()
+        guestListMoreDisposables = api.getGuest(page)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    res ->
+
+                    view?.onLoadMoreSuccessGuest(res.data)
+
+                }, {
+                    err ->
+                    if (err is HttpException) {
+                        val body = retrofit.errorConverter<Response<Throwable>>(err)
+                        view?.onLoadMoreFailedGuest("Error: ${body}")
+                    } else {
+                        view?.onLoadMoreFailedGuest(err.localizedMessage)
                     }
                 })
     }

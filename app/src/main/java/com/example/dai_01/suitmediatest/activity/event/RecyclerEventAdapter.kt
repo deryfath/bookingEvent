@@ -34,7 +34,7 @@ class RecyclerEventAdapter (private val activity: EventActivity, private val ite
             it.visibility= View.VISIBLE
             Glide.with(it.context).load(data.image).into(it.findViewById(R.id.imageEvent) as ImageView)
             (it.findViewById(R.id.nameEvent) as TextView).text=data.name
-            (it.findViewById(R.id.dateEvent) as TextView).text=data.date
+            (it.findViewById(R.id.dateEvent) as TextView).text="23 April 2020"
 
         }
 

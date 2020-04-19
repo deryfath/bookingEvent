@@ -7,6 +7,8 @@ import com.example.dai_01.suitmediatest.mvp.View
 
 interface GuestView: View {
     fun onLoadSuccessGuest(message: List<DataGuest>)
-
     fun onLoadFailedGuest(message: String)
+
+    fun onLoadMoreSuccessGuest(message: List<DataGuest>)
+    fun onLoadMoreFailedGuest(message: String)
 }

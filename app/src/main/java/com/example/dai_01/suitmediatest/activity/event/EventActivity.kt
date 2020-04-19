@@ -47,6 +47,31 @@ class EventActivity : AppCompatActivity(),EventView, ViewPager.OnPageChangeListe
     private val INDONESIA = LatLngBounds(
             LatLng(-10.1718, 95.31644), LatLng(5.88969, 140.71813))
 
+    private val arrImage:List<String> = listOf(
+            "https://cdn.pixabay.com/photo/2020/03/30/16/26/helsinki-4984737_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/23/15/05/landscape-4961094_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/31/15/10/landscape-4988078_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/28/17/56/landscape-4978065_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/29/21/45/petra-4982348_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/29/21/45/petra-4982348_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/29/19/56/landscape-4982074_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/27/06/56/landscape-4972639_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/04/01/12/57/landscape-4991121_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/03/15/12/51/mountains-4933524_960_720.jpg"
+    )
+
+    private val arrLocation:List<String> = listOf(
+            "-3.198839, 102.111313",
+            "-0.202416, 103.485536",
+            "2.957564, 112.049930",
+            "0.348498, 121.131089",
+            "-2.303560, 119.444754",
+            "0.046998, 125.739878",
+            "2.413210, 128.263094",
+            "-4.881933, 123.991832",
+            "-6.350516, 132.847742",
+            "-5.554068, 139.125319"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,12 +139,19 @@ class EventActivity : AppCompatActivity(),EventView, ViewPager.OnPageChangeListe
         rv_event.adapter=adapter
 
         listEvent = mutableListOf()
+
+        message.forEachIndexed { index, dataEvent ->
+
+            dataEvent.image = arrImage.get(index)
+            dataEvent.location = arrLocation.get(index)
+        }
+
         this.listEvent.addAll(message)
 
         listEventHorizontal = mutableListOf()
 
         //viewpager
-        message.forEach{
+        listEvent.forEach{
             listEventHorizontal.add(it.image)
         }
         initViewPagerImage(listEventHorizontal)

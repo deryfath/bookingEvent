@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Masukkan Nama"
-        android:imeOptions="actionNext"
+        android:imeOptions="actionDone"
         android:backgroundTint ="@android:color/white"
         android:textColorHint="@android:color/white"/>
 

@@ -55,5 +55,34 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
+
+    <RelativeLayout
+        android:id="@+id/lyLoadMore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/pbMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/txtMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pbMore"
+            android:layout_centerHorizontal="true"
+            android:text="Loading..."/>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:id="@+id/progress_module_more"
+        android:layout_gravity="center_horizontal" />
+
 </RelativeLayout>
 </LinearLayout>

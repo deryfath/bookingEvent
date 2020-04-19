@@ -18,7 +18,7 @@ class App : Application() {
 
         component = DaggerAppComponent.builder()
                     .appModule(AppModule(this))
-                    .networkModule(NetworkModule("https://raw.githubusercontent.com/"))
+                    .networkModule(NetworkModule("https://reqres.in/"))
                     .apiModule(ApiModule())
                     .build()
     }

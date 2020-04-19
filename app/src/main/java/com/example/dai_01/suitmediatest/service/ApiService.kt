@@ -7,10 +7,10 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    @GET("/deryfath/dummyData/master/dummyGuest")
-    fun getGuest(): Observable<ResponseData<List<DataGuest>>>
+    @GET("/api/users?per_page=10")
+    fun getGuest(@Query("page")page:Int): Observable<GuestResponse>
 
-    @GET("/deryfath/dummyData/master/dummyEvent")
-    fun getEvent(): Observable<ResponseData<List<DataEvent>>>
+    @GET("/api/events?per_page=10")
+    fun getEvent(): Observable<EventResponse>
 
 }
