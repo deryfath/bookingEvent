@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.dai_01.suitmediatest.R
 import com.example.dai_01.suitmediatest.extension.inflate
 import com.example.dai_01.suitmediatest.model.DataGuest
@@ -70,7 +71,7 @@ class RecyclerGuestAdapter (val activity: GuestActivity, val mData:List<DataGues
 
         fun bindDataNotif(activity: GuestActivity, dataGuest: DataGuest){
             with(dataGuest){
-                Glide.with(itemView.context).load(dataGuest.avatar).into(itemView.findViewById(R.id.iv_guest) as ImageView)
+                Glide.with(itemView.context).load(dataGuest.avatar).apply(RequestOptions.circleCropTransform()).into(itemView.findViewById(R.id.iv_guest) as ImageView)
                 (itemView.findViewById(R.id.nameGuest) as TextView).text=dataGuest.first_name+" "+dataGuest.last_name
 
 

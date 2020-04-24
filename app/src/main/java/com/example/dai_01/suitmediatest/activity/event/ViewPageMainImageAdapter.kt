@@ -12,23 +12,27 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.dai_01.suitmediatest.R
+import com.example.dai_01.suitmediatest.model.DataEvent
 
 
-class ViewPageMainImageAdapter(val context: Context, val layouts: MutableList<String>) : PagerAdapter() {
+class ViewPageMainImageAdapter(val context: Context, val layouts: MutableList<DataEvent>) : PagerAdapter() {
 
     var layoutInflater: LayoutInflater? = null
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-        val view = layoutInflater!!.inflate(R.layout.view_pager_item, container, false)
+        val view = layoutInflater!!.inflate(R.layout.item_event, container, false)
+        val data = layouts[position]
 
-//        var textImg = view.findViewById(R.id.view_page_text_main) as TextView
-        var imgView = view.findViewById(R.id.view_page_main_image) as ImageView
+        var textImg = view.findViewById(R.id.nameEvent) as TextView
+        var textDateImg = view.findViewById(R.id.dateEvent) as TextView
+        var imgView = view.findViewById(R.id.imageEvent) as ImageView
 
-//        textImg.setText(texts[position])
+        textImg.setText(data.name)
+        textDateImg.setText("23 April 2020")
 
-        Glide.with(context).load(layouts[position]).into(imgView)
+        Glide.with(context).load(data.image).into(imgView)
 
 
         view.setOnClickListener {

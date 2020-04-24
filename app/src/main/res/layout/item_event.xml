@@ -2,21 +2,30 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="2dp"
-    app:cardElevation="2dp"
+    android:layout_height="150dp"
+    android:layout_margin="5dp"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="6dp"
+    app:cardPreventCornerOverlap="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageEvent"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:background="@color/grayEditText"/>
 
         <LinearLayout
             android:padding="10dp"
             android:layout_weight="1"
-            android:gravity="center_vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -30,27 +39,28 @@
                 android:layout_height="wrap_content"
                 android:text="nama"/>
 
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."/>
+
+            <TextView
+                android:layout_marginTop="3dp"
                 android:textColor="@android:color/holo_orange_dark"
                 android:id="@+id/dateEvent"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="tanggal"/>
+                android:layout_height="match_parent"
+                android:text="tanggal"
+                android:textSize="13dp"
+                android:gravity="bottom"
+                android:layout_gravity="end"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."/>
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageEvent"
-            android:layout_width="140dp"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:background="@color/grayEditText"/>
+
 
 
     </LinearLayout>

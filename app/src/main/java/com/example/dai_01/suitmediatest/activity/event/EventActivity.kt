@@ -99,18 +99,18 @@ class EventActivity : AppCompatActivity(),EventView, ViewPager.OnPageChangeListe
 
             if (isMapActive){
                 flipper.displayedChild = 1
-                btnFlipper.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.btn_article_selected))
+                btnFlipper.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_list_view))
                 isMapActive  = false
             }else{
                 flipper.displayedChild = 0
-                btnFlipper.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.btn_article_normal))
+                btnFlipper.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_map_view))
                 isMapActive  = true
             }
 
         }
     }
 
-    private fun initViewPagerImage(list:MutableList<String>){
+    private fun initViewPagerImage(list:MutableList<DataEvent>){
 
         viewPagerEvent.adapter = ViewPageMainImageAdapter(this,list)
         viewPagerEvent.addOnPageChangeListener(this)
@@ -154,7 +154,7 @@ class EventActivity : AppCompatActivity(),EventView, ViewPager.OnPageChangeListe
         listEvent.forEach{
             listEventHorizontal.add(it.image)
         }
-        initViewPagerImage(listEventHorizontal)
+        initViewPagerImage(listEvent)
 
         drawMarker(listEvent)
     }
@@ -204,10 +204,10 @@ class EventActivity : AppCompatActivity(),EventView, ViewPager.OnPageChangeListe
         textmarker.text = title
 
         if(status.equals("selected")){
-            imageMarker.setColorFilter(ContextCompat.getColor(context, R.color.selectedMap));
+            imageMarker.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_marker_selected))
             textmarker.background = ContextCompat.getDrawable(this,R.drawable.bg_rectangle_rounded_selected)
         }else{
-            imageMarker.setColorFilter(ContextCompat.getColor(context, R.color.unselectedMap));
+            imageMarker.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_marker_unselected))
             textmarker.background = ContextCompat.getDrawable(this,R.drawable.bg_rectangle_rounded_gray)
 
         }

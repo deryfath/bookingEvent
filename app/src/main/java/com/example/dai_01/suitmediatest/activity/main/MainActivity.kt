@@ -38,13 +38,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val name = intent.getStringExtra("name");
-        if (isPalindrome(name)){
-            Toast.makeText(getApplicationContext(),"PALINDROME",Toast.LENGTH_SHORT).show();
 
-        }else{
-            Toast.makeText(getApplicationContext(),"NOT PALINDROME",Toast.LENGTH_SHORT).show();
-
-        }
         nameLogin.text = name
 
         btnEvent.setOnClickListener {
@@ -73,20 +67,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun isPalindrome(str: String): Boolean {
 
-        var i = 0
-        var j = str.length - 1
-
-        while (i < j) {
-
-            if (str[i] != str[j])
-                return false
-
-            i++
-            j--
-        }
-        return true
-    }
 
 }

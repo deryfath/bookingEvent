@@ -17,12 +17,12 @@
             android:textColor="@android:color/white"/>
 
         <ImageView
+            android:layout_marginTop="4dp"
             android:layout_below="@+id/textEventMap"
             android:id="@+id/imageEvent"
-            android:tint="@android:color/holo_red_dark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/map_marker_radius" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_marker_unselected" />
 
 
 </RelativeLayout>
